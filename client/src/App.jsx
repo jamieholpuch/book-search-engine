@@ -24,8 +24,9 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import LoginForm from './components/LoginForm';
+import Navbar from './components/Navbar';
+import SignupForm from './components/SignupForm';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -55,8 +56,10 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="flex-column justify-flex-start min-100-vh">
-        <Header />
+        <Navbar />
         <div className="container">
+        <LoginForm />
+        <SignupForm />
           <Outlet />
         </div>
         <Footer />
