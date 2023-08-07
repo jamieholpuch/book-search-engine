@@ -1,19 +1,3 @@
-// import './App.css';
-// import { Outlet } from 'react-router-dom';
-
-// import Navbar from './components/Navbar';
-
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <Outlet />
-//     </>
-//   );
-// }
-
-export default App;
-
 import './App.css';
 import {
   ApolloClient,
@@ -24,9 +8,6 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 
-import LoginForm from './components/LoginForm';
-import Navbar from './components/Navbar';
-import SignupForm from './components/SignupForm';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -55,14 +36,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-flex-start min-100-vh">
-        <Navbar />
-        <div className="container">
-        <LoginForm />
-        <SignupForm />
-          <Outlet />
-        </div>
-        <Footer />
+      <div className="flex-column justify-center align-center min-100-vh bg-primary">
+        <Outlet />
       </div>
     </ApolloProvider>
   );
